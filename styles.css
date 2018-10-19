@@ -1,0 +1,50 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  
+  display: flex;
+  
+  margin: 0px;
+}
+
+.body-header {
+  flex-shrink: 0;
+  overflow: scroll;
+  
+  width: 225px;
+  height: 100vh;
+  
+  border-right: 1px solid black;
+}
+
+.body-header h1 {
+  padding-left: 10px;
+}
+
+.nav-link {
+  display: block;
+  border-top: 1px solid black;
+  padding: 10px;
+}
+
+main {
+  overflow: scroll;
+  height: 100vh;
+  padding: 0px 15px;
+}
+
+@media (max-width: 580px) {
+  body {
+    flex-direction: column;
+  }
+  
+  .body-header {
+    height: inherit;
+    width: 100vw;
+    border-bottom: 1px solid black;
+    overflow: visible;
+  }
+  
+  main {
+    overflow: visible;
+  }
+}

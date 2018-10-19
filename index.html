@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <title>Technical Documentation Page</title>
+  </head>
+  <body>
+    <header class="body-header">
+      <nav id="navbar">
+        <header><h1>Notes on Assembly</h1></header>
+        <a class="nav-link" href="#Introduction">Introduction</a>
+        <a class="nav-link" href="#Assembly_Language">Assembly Language</a>
+        <a class="nav-link" href="#Store_Word_Instruction">Store Word Instruction</a>
+        <a class="nav-link" href="#Control_Flow_Labels">Control Flow Labels</a>
+        <a class="nav-link" href="#Load_Word_Instruction">Load Word Instruction</a>
+        <a class="nav-link" href="#Load_Immediate_Instruction">Load Immediate Instruction</a>
+      </nav>
+    </header>
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header><h2>Introduction</h2></header>
+        <p>This page is meant to be a page to hold the current notes that I have on Assembly. It shouldn't be used as a source because I am still learning. 🙂</p>
+      </section>
+      <section class="main-section" id="Assembly_Language">
+        <header><h2>Assembly Language</h2></header>
+        <p>Assembly Language or Assembly translates directly to machine language and is considered a low-level programming language.</p>
+        <p>Assembly is more human readable than machine code because it uses letters and numbers which are hexadecimal or decimal for operations rather than a number to define an operation in machine language.</p>
+        <p>Assembly doesn't have abstractions. Rather it's notation consists entirely of the instruction set that a given CPU provides. Some of the features lost between a high-level language and assembly are outlined below:
+          <ul>
+            <li>Assembly doesn't have variables, and most of the time doesn't have types.
+            <li>Assembly doesn't support structs, classes, or objects
+            <li>Assembly doesn't support methods or functions, rather they are made up of a large number of instructions.
+            <li>An assembler is used to translate assembly language into machine language.
+          </ul></p>
+        <p>Assembly instructions use registers as inputs and outputs.</p>
+      </section>
+      <section class="main-section" id="Store_Word_Instruction">
+        <header><h2>Store Word Instruction</h2></header>
+        <p>The store word instruction copies a value from a register to memory. It can be written by writing <code>sw</code> then a register which acts as the source, a comma, then a constant and another register within parenthesis. The second register should hold a memory address where the contents of the first register will be stored. For example <code>sw $t1, 0($t2)</code>. The constant plus the memory address is where the contents of the first register will be stored.</p>
+      </section>
+      <section class="main-section" id="Control_Flow_Labels">
+        <header><h2>Control Flow Labels</h2></header>
+        <p>Assembly uses labels as names for a location in a program which then allows manipulation of the control flow.<br>
+  <br>
+          A control flow label can simply have a name followed by a colon. For example <code>my_label:</code>. To use a label, use the jump instruction.</p>
+      </section>
+      <section class="main-section" id="Load_Word_Instruction">
+        <header><h2>Load Word Instruction</h2></header>
+        <p>The <strong>load word instruction</strong> copies a value from memory to a register, and operates very similarly to the store word instruction with the difference that the first register location indicates the destination register for the value, and the second register holds the memory address to pull the value from. For example: <code>lw $t3, 0($t4)</code>.</p>
+        
+  <p>The load word instruction can be used to read from I/O devices, such as a switch.</p>
+      </section>
+      <section class="main-section" id="Load_Immediate_Instruction">
+        <header><h2>Load Immediate Instruction</h2></header>
+        <p>The load immediate instruction allows a value to be put into a register. The instruction is written by writing <code>li</code> then the register, then a comma and a value. For example <code>li $t0, 8</code>.</p>
+
+  <p>li takes two clock cycles to complete because it is a pseudo-operation made up of two separate native instructions.</p>
+      </section>
+    </main>
+  </body>
+</html>
+<!-- Remove comment to enable script
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+-->
